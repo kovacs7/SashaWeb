@@ -22,6 +22,7 @@ import { FeatureCard } from "@/components/feature-card"
 import { HowItWorks } from "@/components/how-it-works"
 import { UseCaseCard } from "@/components/use-case-card"
 import { TestimonialCard } from "@/components/testimonial-card"
+import { HamburgerMenu } from "@/components/HamburgerMenu"
 
 export default function Home() {
   return (
@@ -30,57 +31,89 @@ export default function Home() {
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Brain className="h-8 w-8 text-yellow-500" />
-            <span className="text-xl font-bold">RoboLLM</span>
+            <Image src="/SASHA_LOGO.png" alt="LOGO" width={32} height={32} />
+            <span className="lg:text-xl text-sm tracking-tight font-semibold">
+              Sasha Innoworks
+            </span>
+          </div>
+          <div className="md:hidden">
+            <HamburgerMenu />
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="#features" className="text-sm font-medium hover:text-yellow-500 transition-colors">
+            <Link
+              href="#features"
+              className="text-sm font-medium hover:text-[#FB930Bff] transition-colors"
+            >
               Features
             </Link>
-            <Link href="#how-it-works" className="text-sm font-medium hover:text-yellow-500 transition-colors">
+            <Link
+              href="#how-it-works"
+              className="text-sm font-medium hover:text-[#FB930Bff] transition-colors"
+            >
               How It Works
             </Link>
-            <Link href="#use-cases" className="text-sm font-medium hover:text-yellow-500 transition-colors">
+            <Link
+              href="#use-cases"
+              className="text-sm font-medium hover:text-[#FB930Bff] transition-colors"
+            >
               Use Cases
             </Link>
-            <Link href="#about" className="text-sm font-medium hover:text-yellow-500 transition-colors">
+            <Link
+              href="#about"
+              className="text-sm font-medium hover:text-[#FB930Bff] transition-colors"
+            >
               About Us
             </Link>
-            <Link href="#contact" className="text-sm font-medium hover:text-yellow-500 transition-colors">
+            <Link
+              href="#contact"
+              className="text-sm font-medium hover:text-[#FB930Bff] transition-colors"
+            >
               Contact
             </Link>
           </nav>
-          <div className="flex items-center gap-4">
-            <Button variant="outline" className="hidden md:flex">
+          
+            {/* <Button variant="outline" className="hidden md:flex">
               Log In
-            </Button>
-            <Button className="bg-yellow-500 hover:bg-yellow-600 text-black">Get Started</Button>
-          </div>
+            </Button> */}
+            <Link href="#contact" className="hidden md:inline-block items-center">
+              <Button className="bg-[#FB930Bff] hover:bg-[#FB930Bff]/75 text-yellow-100">
+                Get Started
+              </Button>
+            </Link>
+          
         </div>
       </header>
 
+      {/* Main Content */}
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section className="relative py-12 md:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-yellow-50 dark:bg-yellow-950/20 -z-10" />
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-                  Redefining Robotics with <span className="text-yellow-500">LLM Intelligence</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                  Empowering Automation through{" "}
+                  <span className="text-[#FB930Bff]">
+                    AI, Robotics & Vision
+                  </span>
                 </h1>
                 <p className="text-xl text-muted-foreground md:max-w-[500px]">
-                  Harness the power of Large Language Models to create smarter, more intuitive robotic systems that
-                  understand human intent and adapt to complex environments.
+                  Sasha Innoworks builds intelligent automation that drives
+                  productivity, eliminates manual error, and accelerates growth
+                  for manufacturers worldwide.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                  <Button className="bg-yellow-500 hover:bg-yellow-600 text-black">Request Demo</Button>
+                  <Button className="bg-[#FB930Bff] hover:bg-[#FB930Bff]/75 text-yellow-100">
+                    <Link href="#contact">Request Demo</Link>
+                  </Button>
+
                   <Button variant="outline">Learn More</Button>
                 </div>
               </div>
-              <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/placeholder.svg?height=500&width=600"
+                  src="/Hero.jpg"
                   alt="Robotic arm with AI visualization"
                   fill
                   className="object-cover"
@@ -95,16 +128,18 @@ export default function Home() {
         <section id="features" className="py-20 bg-white dark:bg-background">
           <div className="container px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Powerful Features</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Powerful Features
+              </h2>
               <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-                Our platform combines cutting-edge LLM technology with advanced robotics to deliver unprecedented
-                automation capabilities.
+                Our platform combines cutting-edge LLM technology with advanced
+                robotics to deliver unprecedented automation capabilities.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <ClientSection>
                 <FeatureCard
-                  icon={<Brain className="h-10 w-10 text-yellow-500" />}
+                  icon={<Brain className="h-10 w-10 text-[#FB930Bff]" />}
                   title="Natural Language Control"
                   description="Control robotic systems using natural language commands that are interpreted contextually."
                 />
@@ -112,7 +147,7 @@ export default function Home() {
 
               <ClientSection>
                 <FeatureCard
-                  icon={<Lightbulb className="h-10 w-10 text-yellow-500" />}
+                  icon={<Lightbulb className="h-10 w-10 text-[#FB930Bff]" />}
                   title="Adaptive Learning"
                   description="Systems that learn from interactions and improve performance over time through continuous feedback."
                 />
@@ -120,7 +155,7 @@ export default function Home() {
 
               <ClientSection>
                 <FeatureCard
-                  icon={<ShieldCheck className="h-10 w-10 text-yellow-500" />}
+                  icon={<ShieldCheck className="h-10 w-10 text-[#FB930Bff]" />}
                   title="Enhanced Safety"
                   description="Advanced predictive algorithms that anticipate and prevent potential safety issues."
                 />
@@ -128,7 +163,7 @@ export default function Home() {
 
               <ClientSection>
                 <FeatureCard
-                  icon={<Zap className="h-10 w-10 text-yellow-500" />}
+                  icon={<Zap className="h-10 w-10 text-[#FB930Bff]" />}
                   title="Real-time Processing"
                   description="Process and respond to complex inputs in milliseconds for seamless human-machine interaction."
                 />
@@ -138,19 +173,25 @@ export default function Home() {
         </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="py-20 bg-yellow-50 dark:bg-yellow-950/20">
+        <section
+          id="how-it-works"
+          className="py-20 bg-yellow-50 dark:bg-yellow-950/20"
+        >
           <div className="container px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                How It Works
+              </h2>
               <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-                Our three-step process makes implementing LLM-powered robotics simple and effective.
+                Our three-step process makes implementing LLM-powered robotics
+                simple and effective.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               <ClientSection>
                 <HowItWorks
                   step="01"
-                  icon={<Cpu className="h-10 w-10 text-yellow-500" />}
+                  icon={<Cpu className="h-10 w-10 text-[#FB930Bff]" />}
                   title="Integration"
                   description="Connect our LLM system to your existing robotic infrastructure through our simple API or hardware adapters."
                 />
@@ -159,7 +200,7 @@ export default function Home() {
               <ClientSection>
                 <HowItWorks
                   step="02"
-                  icon={<Layers className="h-10 w-10 text-yellow-500" />}
+                  icon={<Layers className="h-10 w-10 text-[#FB930Bff]" />}
                   title="Training"
                   description="Customize the system to understand your specific industry terminology and operational requirements."
                 />
@@ -168,7 +209,7 @@ export default function Home() {
               <ClientSection>
                 <HowItWorks
                   step="03"
-                  icon={<FastForward className="h-10 w-10 text-yellow-500" />}
+                  icon={<FastForward className="h-10 w-10 text-[#FB930Bff]" />}
                   title="Deployment"
                   description="Deploy the trained system to production with continuous monitoring and improvement cycles."
                 />
@@ -181,15 +222,18 @@ export default function Home() {
         <section id="use-cases" className="py-20 bg-white dark:bg-background">
           <div className="container px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Industry Use Cases</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Industry Use Cases
+              </h2>
               <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-                See how our LLM-powered robotics solutions are transforming industries across the globe.
+                See how our LLM-powered robotics solutions are transforming
+                industries across the globe.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               <ClientSection>
                 <UseCaseCard
-                  icon={<Factory className="h-10 w-10 text-yellow-500" />}
+                  icon={<Factory className="h-10 w-10 text-[#FB930Bff]" />}
                   title="Manufacturing"
                   description="Intelligent assembly lines that adapt to production changes without reprogramming, reducing downtime by up to 60%."
                 />
@@ -197,7 +241,7 @@ export default function Home() {
 
               <ClientSection>
                 <UseCaseCard
-                  icon={<Truck className="h-10 w-10 text-yellow-500" />}
+                  icon={<Truck className="h-10 w-10 text-[#FB930Bff]" />}
                   title="Logistics"
                   description="Warehouse robots that understand complex instructions and optimize routing in real-time, improving efficiency by 45%."
                 />
@@ -205,7 +249,7 @@ export default function Home() {
 
               <ClientSection>
                 <UseCaseCard
-                  icon={<Headphones className="h-10 w-10 text-yellow-500" />}
+                  icon={<Headphones className="h-10 w-10 text-[#FB930Bff]" />}
                   title="Customer Support"
                   description="Physical support robots that can understand customer needs and provide assistance in retail and service environments."
                 />
@@ -218,9 +262,12 @@ export default function Home() {
         <section className="py-20 bg-yellow-50 dark:bg-yellow-950/20">
           <div className="container px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted by Industry Leaders</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Trusted by Industry Leaders
+              </h2>
               <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-                See what our clients have to say about our revolutionary technology.
+                See what our clients have to say about our revolutionary
+                technology.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -249,11 +296,18 @@ export default function Home() {
               </ClientSection>
             </div>
             <div className="mt-16">
-              <h3 className="text-xl font-semibold mb-8 text-center">Our Clients</h3>
+              <h3 className="text-xl font-semibold mb-8 text-center">
+                Our Clients
+              </h3>
               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className="h-12 w-32 bg-muted rounded-md flex items-center justify-center">
-                    <span className="text-muted-foreground font-medium">Logo {i}</span>
+                  <div
+                    key={i}
+                    className="h-12 w-32 bg-muted rounded-md flex items-center justify-center"
+                  >
+                    <span className="text-muted-foreground font-medium">
+                      Logo {i}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -267,35 +321,45 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/About.webp"
                   alt="Team working on robotics"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="space-y-6">
-                <h2 className="text-3xl md:text-4xl font-bold">About RoboLLM</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left">
+                  About Sasha Innoworks
+                </h2>
                 <p className="text-lg text-muted-foreground">
-                  Founded in 2021, RoboLLM is at the forefront of combining large language models with robotics to
-                  create more intuitive and adaptive automation solutions. Our team of AI researchers, robotics
-                  engineers, and industry specialists work together to solve the most challenging problems in
-                  human-machine interaction.
+                  SASHA INNOWORKS PRIVATE LIMITED is a deep-tech company
+                  headquartered at BITS Pilani – Hyderabad (Telangana, India).
+                  Founded in August 2024 by Prof. Sandip S. Deshmukh and Mr.
+                  Kaki Ramesh, it blends academic excellence with industry
+                  experience. We specialize in intelligent automation using AI,
+                  robotics, and computer vision to eliminate manual errors and
+                  boost efficiency. Our solutions serve key sectors like
+                  logistics, automotive, and manufacturing, driving the future
+                  of industrial innovation.
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  Our mission is to democratize advanced robotics by making systems that understand human intent, adapt
-                  to changing environments, and collaborate seamlessly with human workers.
+                  Our mission is to democratize advanced robotics by making
+                  systems that understand human intent, adapt to changing
+                  environments, and collaborate seamlessly with human workers.
                 </p>
                 <div className="flex gap-4">
                   <div className="text-center">
-                    <h3 className="text-3xl font-bold text-yellow-500">50+</h3>
+                    <h3 className="text-3xl font-bold text-[#FB930Bff]">50+</h3>
                     <p className="text-sm text-muted-foreground">Engineers</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-3xl font-bold text-yellow-500">100+</h3>
+                    <h3 className="text-3xl font-bold text-[#FB930Bff]">
+                      100+
+                    </h3>
                     <p className="text-sm text-muted-foreground">Deployments</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-3xl font-bold text-yellow-500">12</h3>
+                    <h3 className="text-3xl font-bold text-[#FB930Bff]">12</h3>
                     <p className="text-sm text-muted-foreground">Countries</p>
                   </div>
                 </div>
@@ -305,32 +369,41 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 bg-yellow-50 dark:bg-yellow-950/20">
+        <section
+          id="contact"
+          className="py-20 bg-yellow-50 dark:bg-yellow-950/20"
+        >
           <div className="container px-4 md:px-6">
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <h2 className="text-3xl md:text-4xl font-bold">Ready to Transform Your Operations?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  Ready to Transform Your Operations?
+                </h2>
                 <p className="text-xl text-muted-foreground">
-                  Get in touch with our team to schedule a demo and see how RoboLLM can revolutionize your automation
-                  processes.
+                  Get in touch with our team to schedule a demo and see how
+                  Sasha innoworks future‑proof your operations.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center">
-                      <Users className="h-5 w-5 text-yellow-500" />
+                      <Users className="h-5 w-5 text-[#FB930Bff]" />
                     </div>
                     <div>
                       <h3 className="font-medium">Sales Team</h3>
-                      <p className="text-sm text-muted-foreground">sales@robollm.tech</p>
+                      <p className="text-sm text-muted-foreground">
+                        sales@sasha.tech
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center">
-                      <Headphones className="h-5 w-5 text-yellow-500" />
+                      <Headphones className="h-5 w-5 text-[#FB930Bff]" />
                     </div>
                     <div>
                       <h3 className="font-medium">Support</h3>
-                      <p className="text-sm text-muted-foreground">support@robollm.tech</p>
+                      <p className="text-sm text-muted-foreground">
+                        support@sasha.tech
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -338,43 +411,61 @@ export default function Home() {
               <Card className="shadow-lg">
                 <CardHeader>
                   <CardTitle>Contact Us</CardTitle>
-                  <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
+                  <CardDescription>
+                    Fill out the form below and we'll get back to you within 24
+                    hours.
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label htmlFor="first-name" className="text-sm font-medium">
+                        <label
+                          htmlFor="first-name"
+                          className="text-sm font-medium"
+                        >
                           First Name
                         </label>
-                        <Input id="first-name" placeholder="John" />
+                        <Input id="first-name" placeholder="" />
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="last-name" className="text-sm font-medium">
+                        <label
+                          htmlFor="last-name"
+                          className="text-sm font-medium"
+                        >
                           Last Name
                         </label>
-                        <Input id="last-name" placeholder="Doe" />
+                        <Input id="last-name" placeholder="" />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium">
                         Email
                       </label>
-                      <Input id="email" type="email" placeholder="john.doe@example.com" />
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="robert@example.com"
+                      />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="company" className="text-sm font-medium">
                         Company
                       </label>
-                      <Input id="company" placeholder="Acme Inc." />
+                      <Input id="company" placeholder="Your company" />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="message" className="text-sm font-medium">
                         Message
                       </label>
-                      <Textarea id="message" placeholder="Tell us about your project and requirements..." />
+                      <Textarea
+                        id="message"
+                        placeholder="Tell us about your project and requirements..."
+                      />
                     </div>
-                    <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black">Send Message</Button>
+                    <Button className="w-full bg-[#FB930Bff] hover:bg-[#FB930Bff]/75 text-yellow-100">
+                      Send Message
+                    </Button>
                   </form>
                 </CardContent>
               </Card>
@@ -382,40 +473,66 @@ export default function Home() {
           </div>
         </section>
       </main>
-
       {/* Footer */}
       <footer className="border-t py-12 bg-background">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <Brain className="h-6 w-6 text-yellow-500" />
-                <span className="font-bold">RoboLLM</span>
+            <div className="space-y-2 md:space-y-4">
+              <div>
+                <Image
+                  src="/SASHA_LOGO.png"
+                  alt="LOGO"
+                  width={24}
+                  height={24}
+                  className="lg:hidden block mb-1"
+                />
+                <div className="flex items-center gap-2 text-center">
+                  <Image
+                    src="/SASHA_LOGO.png"
+                    alt="LOGO"
+                    width={24}
+                    height={24}
+                    className="lg:block hidden"
+                  />
+                  <span className="font-bold">SASHA INNOWORKS</span>
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground">
-                Redefining robotics with LLM intelligence for a smarter, more efficient future.
+              <p className="text-sm text-muted-foreground text-wrap">
+                Empowering Automation through AI, Robotics & Vision.
               </p>
             </div>
             <div>
               <h3 className="font-medium mb-4">Product</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     Features
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     Documentation
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     API
                   </Link>
                 </li>
@@ -425,22 +542,34 @@ export default function Home() {
               <h3 className="font-medium mb-4">Company</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     Careers
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     Press
                   </Link>
                 </li>
@@ -450,17 +579,26 @@ export default function Home() {
               <h3 className="font-medium mb-4">Legal</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-yellow-500"
+                  >
                     Cookie Policy
                   </Link>
                 </li>
@@ -468,9 +606,14 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} RoboLLM. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} SASHA INNOWORKS. All rights reserved.
+            </p>
             <div className="flex gap-4">
-              <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-yellow-500"
+              >
                 <span className="sr-only">Twitter</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -487,7 +630,10 @@ export default function Home() {
                   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                 </svg>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-yellow-500"
+              >
                 <span className="sr-only">LinkedIn</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -506,7 +652,10 @@ export default function Home() {
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-yellow-500">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-yellow-500"
+              >
                 <span className="sr-only">GitHub</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -529,5 +678,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
