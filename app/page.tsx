@@ -491,7 +491,7 @@ export default function Home() {
                   height={24}
                   className="lg:hidden block mb-1"
                 />
-                <div className="flex items-center gap-2 text-center">
+                <div className="flex md:items-center gap-2 text-left">
                   <Image
                     src="/SASHA_LOGO.png"
                     alt="LOGO"
