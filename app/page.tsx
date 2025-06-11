@@ -1,7 +1,13 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Brain,
   Cpu,
@@ -14,21 +20,21 @@ import {
   Truck,
   Users,
   Zap,
-} from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import { ClientSection } from "@/components/client-section"
-import { FeatureCard } from "@/components/feature-card"
-import { HowItWorks } from "@/components/how-it-works"
-import { UseCaseCard } from "@/components/use-case-card"
-import { TestimonialCard } from "@/components/testimonial-card"
-import { HamburgerMenu } from "@/components/HamburgerMenu"
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ClientSection } from "@/components/client-section";
+import { FeatureCard } from "@/components/feature-card";
+import { HowItWorks } from "@/components/how-it-works";
+import { UseCaseCard } from "@/components/use-case-card";
+import { TestimonialCard } from "@/components/testimonial-card";
+import { HamburgerMenu } from "@/components/HamburgerMenu";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Header */}
-      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      {/* Header - Changed from sticky to fixed */}
+      <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Image src="/SASHA_LOGO.png" alt="LOGO" width={32} height={32} />
@@ -36,9 +42,8 @@ export default function Home() {
               Sasha Innoworks
             </span>
           </div>
-          <div className="md:hidden">
-            <HamburgerMenu />
-          </div>
+
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             <Link
               href="#features"
@@ -71,21 +76,21 @@ export default function Home() {
               Contact
             </Link>
           </nav>
-          
-            {/* <Button variant="outline" className="hidden md:flex">
-              Log In
-            </Button> */}
-            <Link href="#contact" className="hidden md:inline-block items-center">
-              <Button className="bg-[#FB930Bff] hover:bg-[#FB930Bff]/75 text-yellow-100">
-                Get Started
-              </Button>
-            </Link>
-          
+
+          {/* Desktop Get Started Button */}
+          <Link href="#contact" className="hidden md:inline-block items-center">
+            <Button className="bg-[#FB930Bff] hover:bg-[#FB930Bff]/75 text-yellow-100">
+              Get Started
+            </Button>
+          </Link>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="flex-1">
+      {/* Mobile Hamburger Menu - Positioned independently */}
+      <HamburgerMenu />
+
+      {/* Main Content - Added top padding to account for fixed header */}
+      <main className="flex-1 pt-16">
         {/* Hero Section */}
         <section className="relative py-12 md:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-yellow-50 dark:bg-yellow-950/20 -z-10" />
@@ -95,11 +100,11 @@ export default function Home() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                   Empowering Automation through{" "}
                   <span className="text-[#FB930Bff]">
-                    AI, Robotics & Vision
+                    AI, Robotics & Vision
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground md:max-w-[500px]">
-                  Sasha Innoworks builds intelligent automation that drives
+                  Sasha Innoworks builds intelligent automation that drives
                   productivity, eliminates manual error, and accelerates growth
                   for manufacturers worldwide.
                 </p>
@@ -107,7 +112,6 @@ export default function Home() {
                   <Button className="bg-[#FB930Bff] hover:bg-[#FB930Bff]/75 text-yellow-100">
                     <Link href="#contact">Request Demo</Link>
                   </Button>
-
                   <Button variant="outline">Learn More</Button>
                 </div>
               </div>
@@ -473,6 +477,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+
       {/* Footer */}
       <footer className="border-t py-12 bg-background">
         <div className="container px-4 md:px-6">
@@ -494,11 +499,11 @@ export default function Home() {
                     height={24}
                     className="lg:block hidden"
                   />
-                  <span className="font-bold">SASHA INNOWORKS</span>
+                  <span className="font-bold">SASHA INNOWORKS</span>
                 </div>
               </div>
               <p className="text-sm text-muted-foreground text-wrap">
-                Empowering Automation through AI, Robotics & Vision.
+                Empowering Automation through AI, Robotics & Vision.
               </p>
             </div>
             <div>
@@ -607,7 +612,7 @@ export default function Home() {
           </div>
           <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} SASHA INNOWORKS. All rights reserved.
+              © {new Date().getFullYear()} SASHA INNOWORKS. All rights reserved.
             </p>
             <div className="flex gap-4">
               <Link
