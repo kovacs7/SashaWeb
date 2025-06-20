@@ -9,9 +9,9 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ quote, author, role }: TestimonialCardProps) {
   return (
-    <Card className="h-full shadow-md hover:shadow-lg transition-shadow duration-300 border-[#FB930Bff]/30 dark:border-yellow-900/50">
+    <Card className="h-full shadow-md hover:shadow-lg transition-shadow duration-300 border-border">
       <CardContent className="pt-6 relative">
-        <Quote className="h-8 w-8 text-[#FB930Bff] absolute top-4 left-4 opacity-30" />
+        <Quote className="h-8 w-8 text-primary absolute top-4 left-4 opacity-30" />
         <div className="pt-6">
           <p className="text-muted-foreground italic">"{quote}"</p>
         </div>

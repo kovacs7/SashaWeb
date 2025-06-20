@@ -10,7 +10,7 @@ interface ClientSectionProps {
 export function ClientSection({ children }: ClientSectionProps) {
   return (
     <motion.div
-      className="bg-white text-black dark:bg-gray-900 dark:text-white p-4 rounded-lg shadow-md"
+       className="bg-card text-card-foreground p-4 rounded-lg shadow-md"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
