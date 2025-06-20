@@ -92,41 +92,48 @@ export default function Home() {
       {/* Main Content - Added top padding to account for fixed header */}
       <main className="flex-1 pt-16">
         {/* Hero Section */}
-        <section className="relative py-12 md:py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-yellow-50 dark:bg-yellow-950/20 -z-10" />
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                  Empowering Automation through{" "}
-                  <span className="text-[#FB930Bff]">
-                    AI, Robotics & Vision
-                  </span>
-                </h1>
-                <p className="text-xl text-muted-foreground md:max-w-[500px]">
-                  Sasha Innoworks builds intelligent automation that drives
-                  productivity, eliminates manual error, and accelerates growth
-                  for manufacturers worldwide.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                  <Button className="bg-[#FB930Bff] hover:bg-[#FB930Bff]/75 text-yellow-100">
-                    <Link href="#contact">Request Demo</Link>
-                  </Button>
-                  <Button variant="outline">Learn More</Button>
-                </div>
-              </div>
-              <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-xl">
-                <Image
-                  src="/Hero.jpg"
-                  alt="Robotic arm with AI visualization"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+<section className="relative py-12 md:py-24 overflow-hidden bg-background text-foreground">
+  {/* Background layer */}
+  <div className="absolute inset-0 bg-yellow-50 dark:bg-yellow-950/20 -z-10" />
+
+  <div className="container px-4 md:px-6">
+    <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+
+      {/* Left Content */}
+      <div className="space-y-4">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+          Empowering Automation through{" "}
+          <span className="text-[#FB930B]">AI, Robotics & Vision</span>
+        </h1>
+
+        <p className="text-xl text-muted-foreground md:max-w-[500px]">
+          Sasha Innoworks builds intelligent automation that drives
+          productivity, eliminates manual error, and accelerates growth
+          for manufacturers worldwide.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-3 pt-4">
+          <Button className="bg-[#FB930B] hover:bg-[#FB930B]/75 text-yellow-100">
+            <Link href="#contact">Request Demo</Link>
+          </Button>
+          <Button variant="outline">Learn More</Button>
+        </div>
+      </div>
+
+      {/* Right Image */}
+      <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-xl">
+        <Image
+          src="/Hero.jpg"
+          alt="Robotic arm with AI visualization"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* Features Section */}
         <section id="features" className="py-20 bg-white dark:bg-background">
