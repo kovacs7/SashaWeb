@@ -9,14 +9,15 @@ interface FeatureCardProps {
 
 export function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <Card className="h-full shadow-md hover:shadow-lg transition-shadow duration-300 border-yellow-200 dark:border-yellow-900/50">
+    <Card className="h-full bg-[#0B192C] text-white shadow-md hover:shadow-lg transition-shadow duration-300 border-[#1E3E62]">
       <CardHeader>
         <div className="mb-2">{icon}</div>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-[#FF6500]">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-muted-foreground">{description}</p>
+        <p className="text-[#E0E0E0]">{description}</p>
       </CardContent>
     </Card>
   )
 }
+
