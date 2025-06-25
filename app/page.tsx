@@ -29,6 +29,8 @@ import { HowItWorks } from "@/components/how-it-works";
 import { UseCaseCard } from "@/components/use-case-card";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { HamburgerMenu } from "@/components/HamburgerMenu";
+import { GrantsSection } from "@/components/GrantsSection";
+import TeamSection from "@/components/TeamSection";
 
 export default function Home() {
   return (
@@ -58,6 +60,18 @@ export default function Home() {
               How It Works
             </Link>
             <Link
+              href="#grants"
+              className="text-sm font-medium hover:text-[#FB930Bff] transition-colors"
+            >
+              Grants
+            </Link>
+            <Link
+              href="#team"
+              className="text-sm font-medium hover:text-[#FB930Bff] transition-colors"
+            >
+              Team
+            </Link>
+            <Link
               href="#use-cases"
               className="text-sm font-medium hover:text-[#FB930Bff] transition-colors"
             >
@@ -78,11 +92,11 @@ export default function Home() {
           </nav>
 
           {/* Desktop Get Started Button */}
-          <Link href="#contact" className="hidden md:inline-block items-center">
+          {/* <Link href="#contact" className="hidden md:inline-block items-center">
             <Button className="bg-[#FB930Bff] hover:bg-[#FB930Bff]/75 text-yellow-100">
               Get Started
             </Button>
-          </Link>
+          </Link> */}
         </div>
       </header>
 
@@ -92,7 +106,7 @@ export default function Home() {
       {/* Main Content - Added top padding to account for fixed header */}
       <main className="flex-1 pt-16">
         {/* Hero Section */}
-        <section className="relative py-12 md:py-24 overflow-hidden">
+        {/* <section className="relative py-12 md:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-yellow-50 dark:bg-yellow-950/20 -z-10" />
           <div className="container px-4 md:px-6">
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
@@ -123,6 +137,49 @@ export default function Home() {
                   className="object-cover"
                   priority
                 />
+              </div>
+            </div>
+          </div>
+        </section> */}
+        <section
+          className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/Hero.jpg')", // Replace with your image path
+          }}
+        >
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+
+          {/* Hero Content */}
+          <div className="relative z-10 container mx-auto px-4 text-center text-white">
+            <div className="max-w-4xl mx-auto">
+              {/* Main Heading */}
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Welcome to Sasha Innoworks
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
+                Transform your business with cutting-edge innovation and
+                technology solutions
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link href="#contact">
+                  <Button className="bg-[#FB930Bff] hover:bg-[#FB930Bff]/75 text-yellow-100 px-8 py-3 text-lg font-semibold rounded-lg transition-all transform hover:scale-105">
+                    Get Started
+                  </Button>
+                </Link>
+
+                <Link href="#features">
+                  <Button
+                    variant="outline"
+                    className="border-white text-black hover:bg-white hover:text-black px-8 py-3 text-lg font-semibold rounded-lg transition-all transform hover:scale-105"
+                  >
+                    Learn More
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -221,6 +278,14 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Grants Section */}
+        <ClientSection>
+          <GrantsSection />
+        </ClientSection>
+
+        {/* Team Section */}
+        <TeamSection />
 
         {/* Use Cases Section */}
         <section id="use-cases" className="py-20 bg-white dark:bg-background">

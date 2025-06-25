@@ -163,6 +163,24 @@ export function HamburgerMenu() {
             </li>
             <li>
               <Link
+                href="#grants"
+                onClick={() => setOpen(false)}
+                className="block px-6 py-4 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-[#FB930Bff] transition-colors font-medium"
+              >
+                Grants
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#team"
+                onClick={() => setOpen(false)}
+                className="block px-6 py-4 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-[#FB930Bff] transition-colors font-medium"
+              >
+                Team
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="#use-cases"
                 onClick={() => setOpen(false)}
                 className="block px-6 py-4 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-[#FB930Bff] transition-colors font-medium"
